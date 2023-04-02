@@ -39,7 +39,7 @@ async def translatees(ctx, text: str=None):
         embed = discord.Embed(
             title="English to Spanish",
             description=text,
-            colour=0xFF5733
+            colour=0xf1c40f
         )
         embed.set_thumbnail(url="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1920px-Bandera_de_Espa%C3%B1a.svg.png")
         embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar.url)

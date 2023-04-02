@@ -56,7 +56,7 @@ async def translateen(ctx, texte: str=None):
         embed = discord.Embed(
             title="El español al inglés",
             description=texte,
-            colour=0xe74c3c
+            colour=0x992d22
         )
         embed.set_thumbnail(url="https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/1920px-Flag_of_England.svg.png")
         embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar.url)

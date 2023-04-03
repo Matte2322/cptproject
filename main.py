@@ -7,6 +7,10 @@ from translate import *
 bot = discord.Bot()
 load_dotenv('mytoken.env')
 
+@bot.slash_command(description='Tests the bot\'s latency')
+async def ping(ctx):
+    await ctx.send('The ping rn: {0} ms'. format(round(bot.latency, 1)))
+
 @bot.slash_command(description='Waves hello :)')
 async def hello(ctx, name: str = None):
     name = name or ctx.author.name

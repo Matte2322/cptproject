@@ -34,7 +34,7 @@ async def listcoms(ctx):
 @bot.slash_command(description='Translates from English to Spanish (Se traduce del inglés al español)')
 async def translatees(ctx, text: str=None):
     text = text or ctx.author.name
-    if text:
+    if text == True:
         text = argostranslate.translate.translate(text, from_code, to_code)
         embed = discord.Embed(
             title="English to Spanish",
@@ -48,7 +48,7 @@ async def translatees(ctx, text: str=None):
 @bot.slash_command(description="Translates from Spanish to English (Se traduce del español al inglés)")
 async def translateen(ctx, texte: str=None):
     texte = texte or ctx.author.name
-    if texte:
+    if texte == True:
         from_code = 'es'
         to_code = 'en' 
 

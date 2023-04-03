@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import discord, os
 from discord.ext import commands
+from discord.commands import Option
 from translate import *
 
 bot = discord.Bot()

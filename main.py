@@ -32,7 +32,7 @@ async def listcoms(ctx):
     await ctx.respond(embed=embed)
 
 @bot.slash_command(description='Translates from English to Spanish (Se traduce del inglés al español)')
-async def translatees(ctx, text: str=None):
+async def translatees(ctx, text: Option(str, "Type something in English")):
     text = text or ctx.author.name
     if text == True:
         text = argostranslate.translate.translate(text, from_code, to_code)
@@ -46,7 +46,7 @@ async def translatees(ctx, text: str=None):
         await ctx.respond(embed=embed)
 
 @bot.slash_command(description="Translates from Spanish to English (Se traduce del español al inglés)")
-async def translateen(ctx, texte: str=None):
+async def translateen(ctx, texte: Option(str, "Type something in Spanish")):
     texte = texte or ctx.author.name
     if texte == True:
         from_code = 'es'

@@ -6,12 +6,12 @@ from translate import *
 bot = discord.Bot()
 load_dotenv('mytoken.env')
 
-@bot.slash_command(name='Waves hello :)', guild_ids=[...])
+@bot.slash_command(description='Waves hello :)', guild_ids=[...])
 async def hello(ctx, name: str = None):
     name = name or ctx.author.name
     await ctx.respond(f"Hello {name}!")
 
-@bot.slash_command(name='Tells you the "about me" for the bot', guild_ids=[...])
+@bot.slash_command(description='Tells you the "about me" for the bot', guild_ids=[...])
 async def help(ctx):
     embed = discord.Embed(
         title='About Me',
@@ -21,7 +21,7 @@ async def help(ctx):
     embed.set_thumbnail(url='https://joshtronic.com/images/arch-linux-meme.jpg')
     await ctx.respond(embed=embed)
 
-@bot.slash_command(name='Lists all commands', guild_ids=[...])
+@bot.slash_command(description='Lists all commands', guild_ids=[...])
 async def listcoms(ctx):
     embed = discord.Embed(
         title="The List of Commands",
@@ -31,7 +31,7 @@ async def listcoms(ctx):
     embed.set_thumbnail(url="http://www.clipartbest.com/cliparts/nTX/oM7/nTXoM7knc.jpeg")
     await ctx.respond(embed=embed)
 
-@bot.slash_command(name='Translates from English to Spanish (Se traduce del inglés al españól)', guild_ids=[...])
+@bot.slash_command(description='Translates from English to Spanish (Se traduce del inglés al españól)', guild_ids=[...])
 async def translatees(ctx, text: str=None):
     text = text or ctx.author.name
     if text:
@@ -45,7 +45,7 @@ async def translatees(ctx, text: str=None):
         embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar.url)
         await ctx.respond(embed=embed)
 
-@bot.slash_command(name="Translates from Spanish to English (Se traduce del español al inglés)", guild_ids=[...])
+@bot.slash_command(description="Translates from Spanish to English (Se traduce del español al inglés)", guild_ids=[...])
 async def translateen(ctx, texte: str=None):
     texte = texte or ctx.author.name
     if texte:

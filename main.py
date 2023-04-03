@@ -31,7 +31,7 @@ async def listcoms(ctx):
     embed.set_thumbnail(url="http://www.clipartbest.com/cliparts/nTX/oM7/nTXoM7knc.jpeg")
     await ctx.respond(embed=embed)
 
-@bot.slash_command(description='Translates from English to Spanish (Se traduce del inglés al españól)')
+@bot.slash_command(description='Translates from English to Spanish (Se traduce del inglés al español)')
 async def translatees(ctx, text: str=None):
     text = text or ctx.author.name
     if text:

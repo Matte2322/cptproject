@@ -20,7 +20,7 @@ async def hello(ctx, name: str = None):
 async def dosomething(ctx, typesomethingout: Option(str, "Type something here and the bot will output")):
     typesomethingout = typesomethingout or ctx.author.name
     if typesomethingout == True:
-        await ctx.send(typesomethingout)
+        await ctx.respond(typesomethingout)
 
 @bot.slash_command(description='Tells you the "about me" for the bot')
 async def help(ctx):

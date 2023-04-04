@@ -50,6 +50,9 @@ async def listcoms(ctx):
 async def translatees(ctx, text: Option(str, "Type something in English")):
     text = text or ctx.author.name
     if text:
+        from_code = 'en'
+        to_code = 'es'
+        
         text = argostranslate.translate.translate(text, from_code, to_code)
         embed = discord.Embed(
             title="English to Spanish",

@@ -23,7 +23,7 @@ async def hello(ctx, name: str = None):
 @bot.slash_command(description='says something')
 async def dosomething(ctx, typesomethingout: Option(str, "Type something here and the bot will output")):
     typesomethingout = typesomethingout or ctx.author.name
-    if typesomethingout == True:
+    if typesomethingout:
         await ctx.respond(typesomethingout)
 
 @bot.slash_command(description='Tells you the "about me" for the bot')
@@ -49,7 +49,7 @@ async def listcoms(ctx):
 @bot.slash_command(description='Translates from English to Spanish (Se traduce del inglés al español)')
 async def translatees(ctx, text: Option(str, "Type something in English")):
     text = text or ctx.author.name
-    if text == True:
+    if text:
         text = argostranslate.translate.translate(text, from_code, to_code)
         embed = discord.Embed(
             title="English to Spanish",
@@ -63,7 +63,7 @@ async def translatees(ctx, text: Option(str, "Type something in English")):
 @bot.slash_command(description="Translates from Spanish to English (Se traduce del español al inglés)")
 async def translateen(ctx, texte: Option(str, "Type something in Spanish")):
     texte = texte or ctx.author.name
-    if texte == True:
+    if texte:
         from_code = 'es'
         to_code = 'en' 
 

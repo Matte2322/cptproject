@@ -46,23 +46,6 @@ async def listcoms(ctx):
     embed.set_thumbnail(url="http://www.clipartbest.com/cliparts/nTX/oM7/nTXoM7knc.jpeg")
     await ctx.respond(embed=embed)
 
-@bot.slash_command(description='Translates from English to Spanish (Se traduce del inglés al español)')
-async def translatees(ctx, text: Option(str, "Type something in English")):
-    text = text or ctx.author.name
-    if text:
-        from_code = 'en'
-        to_code = 'es' 
-
-        text = argostranslate.translate.translate(text, from_code, to_code)
-        embed = discord.Embed(
-            title="English to Spanish",
-            description=text,
-            colour=0xf1c40f
-        )
-        embed.set_thumbnail(url="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1920px-Bandera_de_Espa%C3%B1a.svg.png")
-        embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar.url)
-        await ctx.respond(embed=embed)
-
 @bot.slash_command(description="Translates from Spanish to English (Se traduce del español al inglés)")
 async def translateen(ctx, texte: Option(str, "Type something in Spanish")):
     texte = texte or ctx.author.name
@@ -77,6 +60,24 @@ async def translateen(ctx, texte: Option(str, "Type something in Spanish")):
             colour=0x992d22
         )
         embed.set_thumbnail(url="https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/1920px-Flag_of_England.svg.png")
+        embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar.url)
+        await ctx.respond(embed=embed)
+
+
+@bot.slash_command(description='Translates from English to Spanish (Se traduce del inglés al español)')
+async def translatees(ctx, text: Option(str, "Type something in English")):
+    text = text or ctx.author.name
+    if text:
+        from_code = 'en'
+        to_code = 'es' 
+
+        text = argostranslate.translate.translate(text, from_code, to_code)
+        embed = discord.Embed(
+            title="English to Spanish",
+            description=text,
+            colour=0xf1c40f
+        )
+        embed.set_thumbnail(url="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1920px-Bandera_de_Espa%C3%B1a.svg.png")
         embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar.url)
         await ctx.respond(embed=embed)
 

@@ -36,7 +36,7 @@ async def help(ctx):
 async def listcoms(ctx):
     embed = discord.Embed(
         title="The List of Commands",
-        description='/ping -> tests the bot\'s ping \n /hello -> this is a command that greets you or anybody else if you @ someone\n\n /translatees -> translates from English to Spanish\n /translateen -> translates from Spanish to English',
+        description='/ping -> tests the bot\'s ping \n /dosomething -> outputs something out if you input something \n /hello -> this is a command that greets you or anybody else if you @ someone\n\n /translatees -> translates from English to Spanish\n /translateen -> translates from Spanish to English',
         colour=0x3498db
     )
     embed.set_thumbnail(url="http://www.clipartbest.com/cliparts/nTX/oM7/nTXoM7knc.jpeg")

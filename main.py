@@ -22,9 +22,8 @@ async def hello(ctx, name: str = None):
 
 @bot.slash_command(description='says something')
 async def dosomething(ctx, typesomethingout: Option(str, "Type something here and the bot will output")):
-    typesomethingout = typesomethingout or ctx.author.online
-    if typesomethingout:
-        await ctx.send(typesomethingout)
+    if typesomethingout == True:
+        await ctx.respond(typesomethingout)
 
 @bot.slash_command(description='Tells you the "about me" for the bot')
 async def help(ctx):

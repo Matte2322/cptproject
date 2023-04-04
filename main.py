@@ -7,6 +7,10 @@ from translate import *
 bot = discord.Bot()
 load_dotenv('mytoken.env')
 
+@bot.event
+async def on_ready():
+    print(f"{bot.user} is ready and online!")
+
 @bot.slash_command(description='Tests the bot\'s latency')
 async def ping(ctx):
     await ctx.respond('The ping rn: {0} ms'. format((bot.latency)))

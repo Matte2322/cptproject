@@ -17,7 +17,7 @@ async def hello(ctx, name: str = None):
     await ctx.respond(f"Hello {name}!")
 
 @bot.slash_command(description='says something')
-async def dosomething(ctx, type: Option(str, "Type something here and the bot will output")):
+async def dosomething(ctx, typeSomethingOut: Option(str, "Type something here and the bot will output")):
     typeSomethingOut = typeSomethingOut or ctx.author.name
     if typeSomethingOut == True:
         await ctx.send(typeSomethingOut)

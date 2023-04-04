@@ -16,6 +16,12 @@ async def hello(ctx, name: str = None):
     name = name or ctx.author.name
     await ctx.respond(f"Hello {name}!")
 
+@bot.slash_command(description='says something')
+async def dosomething(ctx, type: Option(str, "Type something here and the bot will output")):
+    typeSomethingOut = ctx.author.name
+    if typeSomethingOut == True:
+        await ctx.send(typeSomethingOut)
+
 @bot.slash_command(description='Tells you the "about me" for the bot')
 async def help(ctx):
     embed = discord.Embed(

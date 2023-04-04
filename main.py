@@ -17,10 +17,10 @@ async def hello(ctx, name: str = None):
     await ctx.respond(f"Hello {name}!")
 
 @bot.slash_command(description='says something')
-async def dosomething(ctx, typeSomethingOut: Option(str, "Type something here and the bot will output")):
-    typeSomethingOut = typeSomethingOut or ctx.author.name
-    if typeSomethingOut == True:
-        await ctx.send(typeSomethingOut)
+async def dosomething(ctx, typesomethingout: Option(str, "Type something here and the bot will output")):
+    typesomethingout = typeSomethingOut or ctx.author.name
+    if typesomethingout == True:
+        await ctx.send(typesomethingout)
 
 @bot.slash_command(description='Tells you the "about me" for the bot')
 async def help(ctx):

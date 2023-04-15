@@ -1,6 +1,8 @@
 import argostranslate.package
 import argostranslate.translate
 
+
+# code excerpt received from github
 from_code = 'es'
 to_code = 'en'
 
